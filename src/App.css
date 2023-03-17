@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=Questrial&display=swap');
-*{
-    font-family: 'Questrial', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+
+* {
+  font-family: 'Questrial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .nav-link {
   position: relative;
-  }
-  
-  .nav-link::before {
+}
+
+.nav-link::before {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -17,25 +18,91 @@
   width: 0%;
   height: 2px;
   background-color: #007bff;
-  transition: all 0.2s ease-in-out;
-  }
-  
-  .nav-link:hover::before {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
   width: 100%;
-  }
-  
-  .nav-link p {
+}
+
+.nav-link p {
   margin: 0;
   padding: 0;
-  }
-  .nav-link p:hover{
-    color: #007bff;
-  }
-  .nav-link.active p {
-  color: black /* veya istediğiniz herhangi bir renk */
-  }
-  input:hover{
-    border-color: #007bff;
-   
-  }
+}
 
+.nav-link p:hover {
+  color: #007bff;
+  border-right: 2px solid #007bff;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.nav-link.active p {
+  color: black;
+  border-right: 2px solid #007bff;
+
+}
+
+.nav-link p {
+  border-right: 2px solid #B5B6B7;
+
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+input:hover {
+  border-color: #007bff;
+
+}
+
+.pagesname {
+  border-bottom: 2px solid #B5B6B7;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  transition: 0.5s;
+
+}
+
+.card:before,
+.card:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px;
+}
+
+.card:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: skew(8deg) rotate(3deg);
+  -moz-transform: skew(8deg) rotate(3deg);
+  -ms-transform: skew(8deg) rotate(3deg);
+  -o-transform: skew(8deg) rotate(3deg);
+  transform: skew(8deg) rotate(3deg);
+}
+
+
+
+.navbar-brand h2 {
+  margin: 0;
+  padding: 0;
+  margin-left: 25px;
+
+}
+
+.navbar-brand h2:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  color: #007bff;
+  border-radius: 10px;
+}
