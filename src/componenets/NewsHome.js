@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-export default function New(props) {
+import { useTranslation } from 'react-i18next';
+export default function Newshome(props) {
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    const apiKey = '8a7e4c9d597f463b9244417e8de89a07';
+    const apiKey = '03fc8c06bf2e4cbbbacb8a3a0be845c4';
     let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${apiKey}`;
     if (props.category) {
       apiUrl += `&category=${props.category}`;
@@ -16,8 +16,10 @@ export default function New(props) {
         console.log(data.articles)
       });
   }, [props.country, props.category, props.search]);
+  const { t, } = useTranslation();
   return (
-    <div className='container'>
+    <div className='container text-center'>
+       <h1>{t(props.pages)}</h1>
       {props.search}
       <div className="row py-3">
         {cards.map((card, index) => {
