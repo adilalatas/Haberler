@@ -5,7 +5,7 @@ import New from "./componenets/New";
 export default class App extends Component {
   state = {
     search: "",
-    category: ["Anasayfa", "İş", "Eğlence", "Sağlık", "Bilim", "Spor", "Teknoloji","Genel","Siyaset"],
+    category: ["Anasayfa", "İş", "Eğlence", "Sağlık", "Bilim", "Spor", "Teknoloji", "Genel", "Siyaset"],
     activeCategoryId: "",
     language: "tr",
     languages: [
@@ -38,15 +38,13 @@ export default class App extends Component {
             languages={this.state.languages}
             handleLanguageChange={this.handleLanguageChange}
           />
-
-          {this.state.search}
         </div>
         <div className="container-fluid my-2">
           <div className="row">
             <div className="col border">
-            <New country={this.state.language}  category={"sports"} key={this.state.newKey}/> {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */ }
+            <New country={this.state.language} search={this.state.search} key={this.state.newKey} onSearch={this.searchValue} />
+              {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */}
             </div>
-
           </div>
         </div>
       </div>
