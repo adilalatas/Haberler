@@ -5,13 +5,13 @@ import New from "./componenets/New";
 export default class App extends Component {
   state = {
     search: "",
-    category: ["Anasayfa", "İş", "Eğlence", "Sağlık", "Bilim", "Spor", "Teknoloji"],
+    category: ["Anasayfa", "İş", "Eğlence", "Sağlık", "Bilim", "Spor", "Teknoloji","Genel","Siyaset"],
     activeCategoryId: "",
-    language: "us",
+    language: "tr",
     languages: [
-      { label: 'Türkçe', value: 'tr' },
-      { label: 'English', value: 'us' },
-      { label: 'Deutsch', value: 'de' },
+      { label: 'Türkiye', value: 'tr' },
+      { label: 'United States', value: 'us' },
+      { label: 'Germany', value: 'de' },
     ],
     newKey: 0, // Add a key to the state
   };
@@ -44,7 +44,7 @@ export default class App extends Component {
         <div className="container-fluid my-2">
           <div className="row">
             <div className="col border">
-              <New country={this.state.language}  category={"sports"} key={this.state.newKey}/> {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */}
+            <New country={this.state.language}  category={"sports"} key={this.state.newKey}/> {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */ }
             </div>
 
           </div>
