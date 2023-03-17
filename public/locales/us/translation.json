@@ -1,13 +1,13 @@
 {
     "Haberler":"News",
-    "Anasayfa": "Home",
     "HaberAra":"Search News",
-    "İş": "Business",
-    "Eğlence": "Entertainment",
-    "Sağlık": "Health",
-    "Bilim": "Science",
-    "Spor": "Sports",
-    "Teknoloji": "Technology",
-    "Genel": "General",
-    "Siyaset": "Politics"
+    "Home": "Home",
+    "Business": "Business",
+    "Entertainment": "Entertainment",
+    "Health": "Health",
+    "Science": "Science",
+    "Sports": "Sports",
+    "Technology": "Technology",
+    "General": "General",
+    "Politics": "Politics"
 }

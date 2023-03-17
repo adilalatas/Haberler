@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Navbar from "./componenets/Navbar";
-import New from "./componenets/New";
+import New from "./componenets/NewsHome";
 
 export default class App extends Component {
   state = {
     search: "",
-    category: ["Anasayfa", "İş", "Eğlence", "Sağlık", "Bilim", "Spor", "Teknoloji", "Genel", "Siyaset"],
+    category: ["Home", "Business", "Entertainment", "Health", "Science", "Sports", "Technology", "General", "Politics"],
     activeCategoryId: "",
     language: "tr",
     languages: [
@@ -26,9 +26,13 @@ export default class App extends Component {
 
 
   render() {
+    if(this.state.category[this.state.activeCategoryId]){
+      console.log(this.state.category[this.state.activeCategoryId])
+    }
+  
     return (
       <div>
-        <div className="container-fluid">
+        <div className="container-fluid ">
           <Navbar
             onSearch={this.searchValue}
             category={this.state.category}
@@ -42,7 +46,7 @@ export default class App extends Component {
         <div className="container-fluid my-2">
           <div className="row">
             <div className="col border">
-            <New country={this.state.language} search={this.state.search} key={this.state.newKey} onSearch={this.searchValue} />
+            {/* <New country={this.state.language} search={this.state.search} key={this.state.newKey} onSearch={this.searchValue} /> */}
               {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */}
             </div>
           </div>

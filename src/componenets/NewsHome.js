@@ -5,7 +5,6 @@ export default function New(props) {
   useEffect(() => {
     const apiKey = '8a7e4c9d597f463b9244417e8de89a07';
     let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${apiKey}`;
-
     if (props.category) {
       apiUrl += `&category=${props.category}`;
     }

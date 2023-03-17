@@ -10,8 +10,8 @@ export default function Navbar(props) {
   }, [language, i18n]);
 
   return (
-    <nav className="navbar navbar-expand-md bg-body-tertiary p-2">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-md bg-body-tertiary " id='navbar'>
+      <div className="container-fluid ">
         <a className="navbar-brand" href="#">
          {t("Haberler")}
         </a>
@@ -37,7 +37,7 @@ export default function Navbar(props) {
                   href="#"
                   onClick={() => props.setActiveCategoryId(id)}
                 >
-                  {t(category)}
+                  <p>{t(category)}</p>
                 </a>
               </li>
             ))}
@@ -57,7 +57,7 @@ export default function Navbar(props) {
           </form>
 
           <nav className="nav">
-            <li className="nav-item dropdown border  mx-2">
+            <li className="nav-item dropdown border  mx-2 my-2 text-center" id='dropdown'>
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -84,6 +84,7 @@ export default function Navbar(props) {
                   </li>
                 ))}
               </ul>
+           
             </li>
           </nav>
         </div>

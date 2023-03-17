@@ -1,13 +1,13 @@
 {
     "Haberler": "Haberler",
     "HaberAra":"Haber Ara",
-    "Anasayfa": "Anasayfa",
-    "İş": "İş",
-    "Eğlence": "Eğlence",
-    "Sağlık": "Sağlık",
-    "Bilim": "Bilim",
-    "Spor": "Spor",
-    "Teknoloji": "Teknoji",
-    "Genel": "Genel",
-    "Siyaset": "Siyaset"
+    "Home": "Ana Sayfa",
+    "Business": "İş Dünyası",
+    "Entertainment": "Eğlence",
+    "Health": "Sağlık",
+    "Science": "Bilim",
+    "Sports": "Spor",
+    "Technology": "Teknoloji",
+    "General": "Genel",
+    "Politics": "Politika"
 }

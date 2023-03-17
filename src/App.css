@@ -4,21 +4,38 @@
     font-size: 18px;
     font-weight: bold;
 }
+
 .nav-link {
-    position: relative;
+  position: relative;
   }
   
   .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: all 0.2s ease-in-out;
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #007bff;
+  transition: all 0.2s ease-in-out;
   }
   
   .nav-link:hover::before {
-    width: 100%;
+  width: 100%;
   }
+  
+  .nav-link p {
+  margin: 0;
+  padding: 0;
+  }
+  .nav-link p:hover{
+    color: #007bff;
+  }
+  .nav-link.active p {
+  color: black /* veya istediğiniz herhangi bir renk */
+  }
+  input:hover{
+    border-color: #007bff;
+   
+  }
+
