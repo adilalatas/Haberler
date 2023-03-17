@@ -3,12 +3,11 @@ import { useTranslation } from 'react-i18next';
 export default function Newshome(props) {
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    const apiKey = '03fc8c06bf2e4cbbbacb8a3a0be845c4';
-    let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${apiKey}`;
+    let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&apiKey=${props.apiKey}`;
     if (props.category) {
       apiUrl += `&category=${props.category}`;
     }
-    const searchUrl = `https://newsapi.org/v2/everything?q=${props.search}&apiKey=${apiKey}`;
+    const searchUrl = `https://newsapi.org/v2/everything?q=${props.search}&apiKey=${props.apiKey}`;
     fetch(props.search ? searchUrl : apiUrl)
       .then(response => response.json())
       .then(data => {

@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 export default function General(props) {
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    const apiKey = '03fc8c06bf2e4cbbbacb8a3a0be845c4';
-    let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${apiKey}`;
+    let apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}`;
     if (props.search) {
-      apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&q=${props.search}&apiKey=${apiKey}`;
+      apiUrl = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&q=${props.search}&apiKey=${props.apiKey}`;
     }
     fetch(apiUrl)
       .then(response => response.json())

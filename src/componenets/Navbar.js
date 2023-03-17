@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar(props) {
   const { languages, language } = props;
   const { t, i18n } = useTranslation();
+  const [searh,setSearch]=useState();
+  
 
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language, i18n]);
   const activeCategory = props.activeCategory || 0;
+
+  function searchBtn (e){
+    e.preventDefault();
+     props.onSearch(searh)
+  }
   return (
     <nav className="navbar navbar-expand-xl bg-body-tertiary " id="navbar">
       <div className="container-fluid ">
@@ -39,8 +46,8 @@ export default function Navbar(props) {
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder={t('HaberAra')} aria-label="Search"
-              onChange={(e) => props.onSearch(e.target.value)} />
-            <button className="btn btn-outline-success" type="submit">
+              onChange={(e) => setSearch(e.target.value)} />
+            <button className="btn btn-outline-success"  onClick={searchBtn}>
               Ara
             </button>
           </form>

@@ -36,6 +36,7 @@ export default class App extends Component {
     }
   }
   render() {
+    const apiKey = 'b0233383aaaf46a2a63e8b9bde8097dc';
     return (
       <div>
         <div className="container-fluid ">
@@ -53,14 +54,14 @@ export default class App extends Component {
           <div className="row-md-12 ">
             <div className="col-md-12 ">
               <Routes>
-                <Route path={`/`} element={<Newshome pages={this.state.category[0]} country={this.state.language} search={this.state.search} key={this.state.newKey}  />} />
-                <Route path={`/` + this.state.category[1]} element={<Business pages={this.state.category[1]} category={this.state.category[1]} country={this.state.language} search={this.state.search}/>} />
-                <Route path={`/` + this.state.category[2]} element={<Entertainment pages={this.state.category[2]}  category={this.state.category[2]} country={this.state.language} search={this.state.search}/>} />
-                <Route path={`/` + this.state.category[3]} element={<Healt pages={this.state.category[3]}  category={this.state.category[3]} country={this.state.language} search={this.state.search}/>} />
-                <Route path={`/` + this.state.category[4]} element={<Science pages={this.state.category[4]} category={this.state.category[4]} country={this.state.language} search={this.state.search} />} />
-                <Route path={`/` + this.state.category[5]} element={<Sports pages={this.state.category[5]}  category={this.state.category[5]} country={this.state.language} search={this.state.search}/>} />
-                <Route path={`/` + this.state.category[6]} element={<Technology pages={this.state.category[6]}  category={this.state.category[6]} country={this.state.language} search={this.state.search}/>} />
-                <Route path={`/` + this.state.category[7]} element={<General pages={this.state.category[7]} category={this.state.category[7]} country={this.state.language} search={this.state.search} />} />
+                <Route path={`/`} element={<Newshome pages={this.state.category[0]} country={this.state.language} search={this.state.search} key={this.state.newKey} apiKey={apiKey} />} />
+                <Route path={`/` + this.state.category[1]} element={<Business pages={this.state.category[1]} category={this.state.category[1]} country={this.state.language} search={this.state.search}  apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[2]} element={<Entertainment pages={this.state.category[2]}  category={this.state.category[2]} country={this.state.language} search={this.state.search}  apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[3]} element={<Healt pages={this.state.category[3]}  category={this.state.category[3]} country={this.state.language} search={this.state.search}  apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[4]} element={<Science pages={this.state.category[4]} category={this.state.category[4]} country={this.state.language} search={this.state.search}  apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[5]} element={<Sports pages={this.state.category[5]}  category={this.state.category[5]} country={this.state.language} search={this.state.search} apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[6]} element={<Technology pages={this.state.category[6]}  category={this.state.category[6]} country={this.state.language} search={this.state.search} apiKey={apiKey}/>} />
+                <Route path={`/` + this.state.category[7]} element={<General pages={this.state.category[7]} category={this.state.category[7]} country={this.state.language} search={this.state.search} apiKey={apiKey} />} />
               </Routes>
               {/* <Newshome country={this.state.language}  search={this.state.search} key={this.state.newKey} onSearch={this.searchValue} /> */}
               {/* burada key vererek React ın, componentların render edilmesi sırasında hangi componentin değiştini anlaması için */}
