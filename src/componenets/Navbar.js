@@ -5,23 +5,21 @@ import { NavLink } from 'react-router-dom';
 export default function Navbar(props) {
   const { languages, language } = props;
   const { t, i18n } = useTranslation();
-  const [searh,setSearch]=useState();
-  
-
+  const [searh, setSearch] = useState();
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language, i18n]);
   const activeCategory = props.activeCategory || 0;
-
-  function searchBtn (e){
+  function searchBtn(e) {
     e.preventDefault();
-     props.onSearch(searh)
+    props.onSearch(searh);
+    e.target.reset(); 
   }
   return (
     <nav className="navbar navbar-expand-xl bg-body-tertiary " id="navbar">
       <div className="container-fluid ">
         <span className="navbar-brand" >
-         <h2> {t('Haberler')}</h2>
+          <h2> {t('Haberler')}</h2>
         </span>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
@@ -32,10 +30,7 @@ export default function Navbar(props) {
             {props.category.map((category, id) => (
               <li className="nav-item" key={id}>
                 <NavLink
-                  className={`nav-link ${activeCategory === id || (!activeCategory && id === 0)
-                    ? 'active'
-                    : ''
-                    }`}
+                  className={`nav-link ${activeCategory === id || (!activeCategory && id === 0) ? 'active': '' }`}
                   aria-current="page"
                   to={id === 0 ? '/' : '/' + category}
                   onClick={() => props.setActiveCategoryId(id)} >
@@ -44,16 +39,15 @@ export default function Navbar(props) {
               </li>
             ))}
           </ul>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder={t('HaberAra')} aria-label="Search"
-              onChange={(e) => setSearch(e.target.value)} />
-            <button className="btn btn-outline-success"  onClick={searchBtn}>
+          <form className="d-flex" role="search" onSubmit={searchBtn}>
+            <input className="form-control me-2"type="search" placeholder={t("HaberAra")}  aria-label="Search" onChange={(e) => setSearch(e.target.value)}/>
+            <button className="btn btn-outline-success" type="submit">
               Ara
             </button>
           </form>
           <nav className="nav">
             <li className="nav-item dropdown border  mx-2 my-2 text-center" id="dropdown" >
-              <span className="nav-link dropdown-toggle"  id="navbarDropdownLanguage" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              <span className="nav-link dropdown-toggle" id="navbarDropdownLanguage" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                 {languages.find((lang) => lang.value === language).label}
               </span>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdownLanguage" >
